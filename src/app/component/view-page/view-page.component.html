@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+<div class="card" *ngFor="let article of articleList">
+    <div *ngIf="article?.email">
+        <div class="card-header">
+            <i class="fa fa-user-circle-o"></i>
+
+            {{article?.email}}
+        </div>
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                <h5>{{article?.title}}</h5>
+                <p>{{article?.content}}</p>
+                <footer class="blockquote-footer">Some Comments <cite title="Source Title">Source Title</cite></footer>
+            </blockquote>
+        </div>
+        <div class="card-body ">
+            <i class="fa " 
+            [ngClass]="{'fa-heart-o ': !Zlike, 'fa-heart ': Zlike}" 
+            id="my-element" 
+            style="font-size:24px;color:red" 
+            (click)="myLike($event)">
+         </i>            <i class='far fa-comment-alt adj' style='font-size:22px;color:rgb(69, 69, 217)' (click)="showCommentInput = !showCommentInput"></i>
+        </div>
+        <div *ngIf="showCommentInput" class="comment-box">
+            <textarea placeholder="Add a comment" [(ngModel)]="Ucomments"></textarea>
+            <button (click)="addComment()">Submit</button>
+        </div>
+        
+
+
+    </div>
+</div>
+
+<h4>Comments</h4>
+<ng-container class="comments" *ngFor="let comment of commentList">
+    <div *ngIf="comment?.Uemail" class=" alert alert-primary" role="alert">
+      <h6><i class="fa fa-user-circle-o"></i> {{comment?.Uemail}}</h6>
+      <footer class="user_comment">{{comment?.Ucomments}}</footer>
+    </div>
+</ng-container>

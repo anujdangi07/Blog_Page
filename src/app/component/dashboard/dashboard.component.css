@@ -1,0 +1,55 @@
+.ellipsis {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: block;
+        overflow: hidden;
+        width: 70em;
+        font-size: 14px;
+      }
+.list-group-item{
+    height:57px;
+}
+
+.shift{
+    padding : 17px
+}
+.shift-2{
+    text-align: left;
+}
+.heading{
+    color:rgb(69, 69, 217)
+}
+
+.shape{
+    border-radius: 50%;
+    position: fixed;
+    bottom: 6%;
+    left: 89%;
+    padding: 12px;
+    width: 4%;
+    height: 8%;
+    background-color:rgb(86, 86, 209);
+    /* box-shadow: 1px 1px rgb(162, 152, 152); */
+
+}
+
+.content{
+    padding: 0px;
+}
+
+.anuj{
+    display: flex;
+    align-items: center;
+    gap: 1%;
+    width: auto;
+}
+
+.main-block{
+    padding:5px;
+   
+}
+.likes-block{
+    display: flex;
+    padding:17px !important;
+    width:92px    ;      
+}

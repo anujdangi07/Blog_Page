@@ -1,0 +1,118 @@
+<app-navbar style="position: sticky;"></app-navbar>
+<div class="container-fluid">
+
+  <div class="row">
+
+
+    <!-- <h5 class="text-danger"> Article List</h5> -->
+    <div class="card p-3 shadow">
+      <h5>Latest Blogs</h5>
+
+      <div class="card-body">
+        <table class="table table-hover">
+          <!-- <thead>
+                          <tr>
+                            <th scope="col">Likes</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Comments</th>
+                            <th scope="col">Action</th>
+                          </tr>
+                        </thead> -->
+          <tbody>
+            <tr *ngFor="let article of articleList">
+              <div routerLink="/viewPage/{{article.id}}" class='anuj'>
+                <td>
+                  <div class="list-group-item list-group-item-action  shift likes-block" aria-current="true">
+
+                    <i class="fa fa-heart" style="font-size:15px;color:red;display: block;padding: 5px"></i>
+                    <h6 class="mb-1" style="width:53%">{{article.likes}}</h6>
+
+                  </div>
+                </td>
+
+                <td>
+                  <div class="list-group-item list-group-item-action shift main-block">
+
+                    <h6 class="mb-1 heading">{{article.title}}</h6>
+
+                    <p class="ellipsis mb-1">{{article.content}}></p>
+                  </div>
+                </td>
+                <td>
+                  <div href="#" class="list-group-item list-group-item-action shift ">
+                    <div class="d-flex w-100 justify-content-between">
+                      <i class='far fa-comment-alt'
+                        style='font-size:15px;color:rgb(69, 69, 217);display: block;padding: 5px'></i>
+                      <h6 class="mb-1">{{article.comments}}</h6>
+                    </div>
+                  </div>
+                </td>
+                <td *ngIf="isAdmin">
+                  <button class="btn btn-outline-danger" (click)="deleteArticle(article)">Delete</button>
+                </td>
+              </div>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card p-3 shadow">
+      <h5>Popular Blogs</h5>
+
+      <div class="card-body">
+        <table class="table table-hover">
+          <!-- <thead>
+                        <tr>
+                          <th scope="col">Likes</th>
+                          <th scope="col">Title</th>
+                          <th scope="col">Comments</th>
+                          <th scope="col">Action</th>
+                        </tr>
+                      </thead> -->
+          <tbody>
+            <tr *ngFor="let article of articleList">
+              <div routerLink="/viewPage/{{article.id}}" class='anuj'>
+                <td>
+                  <div class="list-group-item list-group-item-action  shift likes-block" aria-current="true">
+
+                    <i class="fa fa-heart" style="font-size:15px;color:red;display: block;padding: 5px"></i>
+                    <h6 class="mb-1" style="width:53%">{{article.likes}}</h6>
+
+                  </div>
+                </td>
+
+                <td>
+                  <div class="list-group-item list-group-item-action shift main-block">
+
+                    <h6 class="mb-1 heading">{{article.title}}</h6>
+
+                    <p class="ellipsis mb-1">{{article.content}}</p>
+                  </div>
+                </td>
+                <td>
+                  <div href="#" class="list-group-item list-group-item-action shift ">
+                    <div class="d-flex w-100 justify-content-between">
+                      <i class='far fa-comment-alt'
+                        style='font-size:15px;color:rgb(69, 69, 217);display: block;padding: 5px'></i>
+                      <h6 class="mb-1">{{article.comments}}</h6>
+                    </div>
+                  </div>
+                </td>
+                <td *ngIf="isAdmin">
+                  <button class="btn btn-outline-danger" (click)="deleteArticle(article)">Delete</button>
+                </td>
+              </div>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <!-- <button class="shape"  [routerLink]="['/dashboard/create']>
+        <i class="fa fa-plus" style="font-size:24px;color:aliceblue"></i>
+       
+      </button> -->
+    </div>
+  </div>
+
+</div>

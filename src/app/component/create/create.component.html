@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+<div class="col-md-4 mt-5">
+    <div class="card border-0 shadow p-3">
+        <div class="form-floating mb-3 tetx-center">
+            <h5 class="text-center text-warning">Create Article </h5>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="email" name="email" [(ngModel)]="email" disabled>
+            <label for="email">Author</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="title" name="title" [(ngModel)]="title">
+            <label for="title">Title</label>
+        </div>
+        <div class="form-floating mb-3 " >
+            <input type="text" class="form-control" id="content" name="content" [(ngModel)]="content" style="height: 100px;" >
+            <label for="content">Content</label>
+        </div>
+
+        <button type="button" class="btn btn-outline-success" (click)="addArticle()">Post</button>
+    </div>
+</div>
+
